@@ -4,8 +4,6 @@
 
 ### Antes de instalar
 
-Inicialmente se iba a realizar la instalación en una Raspberry Pi 3 B+, pero debido a las circunstancias excepcionales es imposible acceder a ella en estos momentos. Si nembargo, el procedimiento es el mismo y no debería haber mayor problema en replicarlo en Raspbian u otros sistemas, salvo ligeras diferencias en el gestor de paquetes y la localización de algunos archivos de configuración.
-
 
 
 ### Preparación
@@ -348,12 +346,6 @@ De nuevo, descomentamos los campos de usuario y grupo:
 
 
 
-Y también los campos de los certificados:
-
-![](img/cart.png)
-
-
-
 Debemos cambiar la configuración de cifrado tal y como la tenemos en `/etc/openvpn/server.conf`
 
 ![](img/auth-client.png)
@@ -410,7 +402,7 @@ Realizamos la transferencia mediante `scp`, aunque dependiendo del sistema del c
 
 ### Instalación de la configuración del cliente
 
-Dependiendo de las características del cliente, deberemos utilizar diferentes métodos. En este caso realizaremos las pruebas en Linux.
+Dependiendo de las características del cliente, deberemos utilizar diferentes métodos. En este caso realizaremos las pruebas en Linux y Android.
 
 #### Linux
 
@@ -431,6 +423,20 @@ Ahora debemos abrir el archivo de configuración del cliente y descomentar las l
 Una vez hecho esto, podemos conectarnos ejecutando `openvpn` indicando el fichero de configuración.
 
 ![](img/log.png)
+
+
+
+#### Android
+
+> Para acceder a la VPN desde fuera del host de la máquina virtual y una red distinta, se debe configurar un adaptador puente en la máquina virtual y abrir y configurar los respectivos puertos del router. Para conectarnos desde el móvil en la misma red, basta con configurar un adaptador puente.
+
+Para empezar, creamos el certificado firmado para un nuevo cliente, `client2`, siguiendo el procedimiento expuesto en el punto ***Generación del certificado y las claves del cliente***.
+
+Una vez disponemos del archivo `client2.ovpn`, debemos configurar el cliente desde nuestro móvil. Para ello, transferimos el archivo, ya sea por USB, ssh o cualquier medio.
+
+Descargamos la aplicación **OpenVPN Connect**, la aplicación oficial de OpenVPN. Una vez tenemos el archivo en nuestro dispositivo, la abrimos y seleccionamos nuestro archivo desde la opción *file*:
+
+
 
 
 

@@ -1,0 +1,23 @@
+lines: Line = []
+words: Word = []
+current: Line
+
+
+while words is not empty
+^^Ibest: Word = {"", infinity}
+^^I
+^^Ifor w in words
+^^I^^Iif cost(w) < cost(best)
+^^I^^I^^Ibest = w
+^^I^^Iend
+^^Iend
+^^I
+^^Iif best.content is not ""
+^^I^^Icurrent.push(best)
+^^I^^Iwords.erase(best)
+^^Ielse
+^^I^^Ilines.push(current)
+^^I^^Icurrent = new Line()
+^^Iend
+end
+
