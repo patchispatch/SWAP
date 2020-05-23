@@ -761,4 +761,70 @@ Una vez importado correctamente el perfil podremos cambiar su nombre, y podremos
 
 \section{Aplicaciones a centros de datos y seguridad}
 
+El proceso de instalación y configuración del servicio ya está terminado, y nos da una idea de cómo proceder a la hora de utilizarlo de forma relativamente sencilla. La tecnología VPN ofrece una serie de características que pueden ser muy útiles en granjas de servidores. Exploraremos dos usos diferentes para esta tecnología:
+
+\subsection{Uso 1: asegurar el acceso remoto a una granja web}
+
+Ya sea por tratarse de una red interna de trabajo o por cuestiones de mantenimiento, se puede utilizar una conexión VPN y un firewall para limitar quién puede acceder a las diferentes máquinas de nuestro centro de datos físico.
+
+\medskip
+
+Permitiendo acceso únicamente a través del túnel VPN para ciertos servicios como por ejemplo SSH, podemos distribuir certificados a los distintos encargados de mantenimiento de nuestros servidores de contenido, permitiendo así una gestión más cómoda sin comprometer la seguridad de nuestra granja.
+
+\medskip
+
+Podemos limitar el acceso de diferentes maneras:
+
+\subsubsection*{Limitar el acceso a toda la red}
+
+Esta configuración es útil cuando queremos establecer una red de trabajo distribuida y permitir el acceso a empleados y miembros de la institución. La UGR utiliza esta configuración para varios de sus servicios, como el \textit{acortador de URLs} o el servidor Turing de la ETSIIT, a los que se puede acceder únicamente desde la red de la universidad. Si no se dispone de conexión a eduroam, se puede acceder a través de la VPN de la UGR.
+
+\subsubsection*{Limitar el acceso a los servidores de contenido}
+
+Esta configuración no restringe el acceso al balanceador de carga, y permite que se sirvan los contenidos deseados a cualquier usuario, pero para facilitar el mantenimiento si hay algún error o se desea modificar algo de los servidores de contenido de forma remota se puede establecer acceso mediante SSH por VPN. 
+
+\medskip
+
+De esta forma no es necesario mantener un registro de las diferentes IPs de los trabajadores en las reglas del firewall para poder acceder, únicamente es necesario poseer el certificado correspondiente. Hemos visto que generar certificados es sencillo y automatizable, por lo que de cara a conceder acceso supone una opción más cómoda que modificar la configuración del firewall de cada máquina, y a la hora de revocar permisos basta con anular el certificado, algo que también es sencillo.
+
+\subsection{Uso 2: construir un centro de datos de forma distribuida}
+
+La tecnología VPN permite en esencia recrear una red local de forma distribuida, así que podemos utilizar esto para construir un centro de datos y asegurar las transferencias de información entre servidores.
+
+\medskip
+
+Al estar las comunicaciones cifradas, los ataques \textit{man in the middle} no suponen un problema, pero hay que tener en cuenta que el tráfico pasará por el servidor VPN, pudiendo saturarse o fallar, y condicionando el estado de la red entera. Para evitar esto se debe proporcionar una infraestructura más compleja, con varios servidores VPN.
+
+\medskip
+
+El acceso también estaría restringido gracias a los certificados, siempre y cuando configuremos debidamente los servidores y sus respectivos cortafuegos. No todo el tráfico tiene por qué pasar por el túnel VPN, y se puede permitir el acceso desde fuera de la red privada a diferentes protocolos y servicios, como HTTPS en el balanceador de carga. 
+
+\medskip
+
+OpenVPN es bastante flexible en cuanto a la configuración se refiere, por lo que se podría aplicar, por ejemplo, a proteger la duplicación de datos y el acceso a los servidores de contenido, dejando libre el tráfico de datos menos sensibles para no saturar el túnel.
+
+\section{Conclusión}
+
+La tecnología VPN es mucho más flexible de lo que esperaba encontrar en un principio, y dado que ahora está pasando por una nueva etapa de popularidad debido a los servicios de suscripción y poder cambiar tu identidad en línea, me llamaba la atención explorar cómo podía aplicarse a los contenidos de la asignatura. Que la instalación requiera editar archivos de configuración de red y construir una entidad certificadora SSL me ha parecido muy formativo, y la gran cantidad de opciones de las que dispone el servicio OpenVPN, así como su capacidad multiplataforma y gran comunidad y documentación, han ayudado a comprender mejor los posibles usos de esta herramienta.
+
+\newpage
+
+\section{Bibliografía}
+
+\url{https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-18-04}
+
+\url{https://www.digitalocean.com/community/tutorials/how-to-set-up-an-openvpn-server-on-ubuntu-18-04}
+
+\url{https://askubuntu.com/questions/920486/openvpn-config-client-ovpn-fail-rtnetlink-answers-file-exists}
+
+\url{https://community.openvpn.net/openvpn/wiki}
+
+\url{https://openvpn.net/community-resources/configuring-client-specific-rules-and-access-policies/}
+
+\url{https://openvpn.net/community-resources/ethernet-bridging/}
+
+\url{https://openvpn.net/community-resources/installing-openvpn/}
+
+\url{https://openvpn.net/community-resources/setting-up-your-own-certificate-authority-ca/}
+
 \end{document}

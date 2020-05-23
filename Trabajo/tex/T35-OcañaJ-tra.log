@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Arch Linux) (preloaded format=xelatex 2020.5.3)  23 MAY 2020 01:43
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Arch Linux) (preloaded format=xelatex 2020.5.3)  23 MAY 2020 14:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1061,32 +1061,38 @@ LaTeX Info: Redefining \% on input line 758.
 LaTeX Info: Redefining \. on input line 760.
 LaTeX Info: Redefining \% on input line 760.
  [24]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 764.
-LaTeX Info: Redefining \. on input line 764.
-LaTeX Info: Redefining \% on input line 764.
+LaTeX Info: Redefining \. on input line 793.
+LaTeX Info: Redefining \% on input line 793.
  [25]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 764.
+LaTeX Info: Redefining \. on input line 810.
+LaTeX Info: Redefining \% on input line 810.
+ [26]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 830.
+LaTeX Info: Redefining \. on input line 830.
+LaTeX Info: Redefining \% on input line 830.
+ [27]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 830.
  (./T35-OcañaJ-tra.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 764.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 764.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 830.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 830.
 Package rerunfilecheck Info: File `T35-OcañaJ-tra.out' has not changed.
-(rerunfilecheck)             Checksum: DAAB5333B915692835DFE0F0ED9EE94E.
+(rerunfilecheck)             Checksum: F215F92EA0FAEEC01841943D90FED713.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 764.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 830.
  ) 
 Here is how much of TeX's memory you used:
- 26701 strings out of 492483
- 491463 string characters out of 6134980
- 614128 words of memory out of 5000000
- 30908 multiletter control sequences out of 15000+600000
+ 26703 strings out of 492483
+ 491491 string characters out of 6134980
+ 614546 words of memory out of 5000000
+ 30910 multiletter control sequences out of 15000+600000
  543788 words of font info for 84 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 55i,11n,96p,450b,915s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,11n,96p,689b,915s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on T35-OcañaJ-tra.pdf (25 pages).
+Output written on T35-OcañaJ-tra.pdf (27 pages).
